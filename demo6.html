@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/525fd5b530.js" crossorigin="anonymous"></script>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        body{
+            background: rgb(193, 62, 62);
+            background: linear-gradient(139deg, rgba(193, 62, 62, 1) 0%, rgba(230,179,50,1) 100% );
+            overflow: hidden;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            height: 100%;
+        }
+        #todos{
+            color: white;
+            padding: 20px;
+            width: 600px;
+            margin: 0 auto;
+            height: auto;
+        }
+        #todos.heading{
+            margin-bottom: 30px;
+            text-align: center;
+            
+        }
+        #todos > .heading > h1{
+            display: inline-block;
+            position: relative;
+            text-transform: uppercase;
+            font-size: 2.5rem;
+        }
+        #todos > .heading > h1::before{
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            bottom: 0;
+            width: 10%;
+            height: 2px;
+            background-color: white;
+            transition: .5s;
+        }
+        #todos > .heading > h1:hover::before{
+            width: 80%;
+        }
+        #todos > .todo-input-container{
+            width: 100%;
+            max-width: 500%;
+            text-align: center;
+            position: relative;
+            padding: 20px;
+        }
+        #todos > .todo-input-container > .todo_input{
+           border: none;
+           outline: none;
+           padding: 12px;
+           margin-block: 12px;
+        }
+        #todos > .todo-input-container > .add-item{
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+        }
+        #todos > .todo-input-container > .add-item:nth-child(2){
+            right: 40px;
+            background-color: rgb(233, 152, 61);
+        }
+    </style>
+</head>
+<body>
+    <div id="todos">
+        <div class="heading">
+            <h1>Add Todo List</h1>
+        </div>
+        <div class="todo-input-container">
+            <input type="text" class="todo-input" placeholder="Add Task...">
+            <i class="fas fa-plus add-item"></i>
+            <i class="fas fa-trash-alt add-item deleteBtn"></i>
+        </div>
+    </div>
+    <script src="script.js"></script>    
+</body>
+</html>
